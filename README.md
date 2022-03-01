@@ -22,13 +22,11 @@
 
 #### **使用：**
 
-	##### 	方式：
+#### 	方式：
 
 1. star watch 项目 或者 follow 作者后即可收到更新推送
 
-2. ```shell
-   git clone https://github.com/GnaixEuy/SharingSky-SE2019-20212.git
-   ```
+2. git clone https://github.com/GnaixEuy/SharingSky-SE2019-20212.git
 
 ​	***欢迎指正 欢迎 pull request*** 
 
