@@ -4,7 +4,7 @@
 
 #### 维护者:
 
-		* [GnaixEuy](github.com/GnaixEuy)
+		*  [GnaixEuy](https://github.com/GnaixEuy)
 
 ---
 
