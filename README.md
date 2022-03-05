@@ -2,9 +2,9 @@
 
 ---
 
-#### 维护者:
-
-		*  [GnaixEuy](https://github.com/GnaixEuy)
+| 维护者：                                               |
+| :----------------------------------------------------- |
+| [GnaixEuy](https://github.com/GnaixEuy "主维护者地址") |
 
 ---
 
