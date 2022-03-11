@@ -251,4 +251,7 @@
 hadoop:50070
 ```
 
-可见web页面![截屏2022-03-11 19.47.45](Images.assets/截屏2022-03-11 19.47.45.png)
+可见web页面
+
+<img src="Images.assets/image-20220311195959139.png" alt="image-20220311195959139" style="zoom:50%;" />
+
