@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="https://cdn.bootcdn.net/ajax/libs/vue/2.6.9/vue.js" type="text/javascript" charset="utf-8"></script>
+</head>
+
+<body>
+    <div id="app" style=" text-align: center;">
+        <button @click="sub">-</button>
+        <span>{{num}}</span>
+        <button @click="sup">+</button>
+    </div>
+
+    <script type="text/javascript">
+        var vm = new Vue({
+            el: "#app",
+            data: {
+                num: 1
+            },
+            methods: {
+                sub: () => this.vm.num--,
+                sup: () => this.vm.num++
+            }
+        })
+    </script>
+</body>
+
+</html>
