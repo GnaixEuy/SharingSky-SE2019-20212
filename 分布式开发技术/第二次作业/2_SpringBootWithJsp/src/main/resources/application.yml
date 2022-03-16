@@ -1,0 +1,14 @@
+spring:
+  mvc:
+    servlet:
+      path: /SpringBootWithJsp
+    view:
+      prefix: /pages/
+      suffix: .jsp
+server:
+  tomcat:
+    uri-encoding: utf-8
+
+#debug: true
+
+
