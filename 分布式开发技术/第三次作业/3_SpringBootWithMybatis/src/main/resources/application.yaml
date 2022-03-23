@@ -1,0 +1,20 @@
+spring:
+  flyway:
+    enabled: true
+    encoding: UTF-8
+    locations: classpath:db/migration
+    sqlMigrationPrefix: V
+    sqlMigrationSeparator: __
+    sqlMigrationSuffixes: .sql
+    validateOnMigrate: true
+    baselineOnMigrate: true
+  datasource:
+    url: jdbc:mysql://localhost:3306/homework?characterEncoding=UTF8&useSSL=false&serverTimezone=Asia/Shanghai&allowPublicKeyRetrieval=true
+    username: root
+    password: 123456
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  sql:
+    init:
+      encoding: utf-8
+mybatis-plus:
+  mapper-locations: classpath:cn/limitless/springbootwithmybatis/dao/impl/*.xml
