@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Thymeleaf内置对象</title>
+<script type="text/javascript" th:src="@{/js/loader.js}"></script>
+</head>
+<body>
+	<h3>Thymeleaf内置对象</h3>
+	<hr/>
+	<div class="container">
+		<h3>#numbers数字处理</h3>
+		<h4>
+			浮点数处理：<span th:text="${#numbers.formatDecimal(num,0,2)}"></span>
+		</h4>
+		<h4>
+			整数处理：￥<span th:text="${#numbers.formatInteger(num,0,'COMMA')}"></span>
+		</h4>
+		<h4>
+			数组(统一)处理：<span th:text="${#numbers.listFormatDecimal(numArr,0,2)}"></span>
+		</h4>
+		<hr/>
+		
+		<h3>#dates时间处理</h3>
+		<h4>
+			当前时间：<span th:text="${#dates.createNow()}"></span>
+		</h4>
+		<h4>
+			格式化时间：<span th:text="${#dates.format(mydate,'yyyy-MM-dd')}"></span>
+		</h4>
+		<hr/>
+		
+		<h3>#String字符串处理</h3>
+		<h4>
+			字符串截取：<span th:text="${#strings.substring(str,6,8)}"></span>
+		</h4>
+		<h4>
+			拆分字符串：<span th:text="${#strings.listSplit(str,' ')}"></span>
+		</h4>
+		<h4>
+			获取内容位置，也用于判断是否包含：<span th:text="${#strings.indexOf(str,'are')}"></span>
+		</h4>
+		<hr/>
+		
+		<h3>#lists、#objects、#aggregates集合与对象处理</h3>
+		<h4>
+			<b>集合处理：</b><br/>
+			判空：<span th:text="${#lists.isEmpty(numArr)}"></span><br/>
+			包含：<span th:text="${#lists.contains(numArr,180)}"></span><br/>
+			排序：<span th:text="${#lists.sort(numArr)}"></span><br/>
+			大小：<span th:text="${#lists.size(numArr)}"></span><br/>
+			
+			<b>对象存在性的校验：</b><br/>
+			对象非空安全取值：<span th:text="${#objects.nullSafe(goods,default)}"></span><br/>
+			集合非空安全取值：<span th:text="${#objects.listNullSafe(numArr,default)}"></span><br/>
+			
+			<b>聚合函数：</b><br/>
+			统计总分：<span th:text="${#aggregates.sum(numArr)}"></span><br/>
+			统计平均：<span th:text="${#aggregates.avg(numArr)}"></span><br/>
+		</h4>
+		
+	</div>
+</body>
+</html>

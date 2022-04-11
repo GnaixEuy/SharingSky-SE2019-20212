@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>主页</title>
+</head>
+<body>
+<div class="container">
+
+    <h2 style="color:red">!!!难点！！</h2>
+    <h4>
+        传参，指定嵌入的页面
+        <div th:insert="header::header(${param3},${param4})"></div>
+    </h4>
+    <hr>
+    <h4>
+        传参，指定嵌入的页面，同时再往页面传递参数
+        <div th:insert="footer::status(${param1},${param2})"></div>
+    </h4>
+</div>
+</body>
+</html>

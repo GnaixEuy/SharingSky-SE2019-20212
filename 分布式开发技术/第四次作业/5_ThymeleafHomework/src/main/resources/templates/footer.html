@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>底部页面</title>
+</head>
+<body>
+<footer th:fragment="status(sysdate,weather)">
+    <h2>我是底部模块，内含状态信息、系统时间、天气预报等。。。</h2>
+    <section>
+        系统时间：<span th:text="${#dates.format(sysdate,'yyyy-MM-dd')}"></span><br/>
+        天气预报：<span th:text="${weather}"></span><br/>
+    </section>
+    <hr/>
+</footer>
+</body>
+</html>

@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+<header th:fragment="header(username,copyright)">
+    <h2>我是头部模块</h2>
+    <section>
+        联系名称：<span th:text="${username}"></span><br/>
+        版权信息：<span th:text="${copyright}"></span><br/>
+    </section>
+    <hr/>
+</header>
+</body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Thymeleaf基本语法</title>
+<script type="text/javascript" th:src="@{/js/loader.js}"></script>
+<script type="text/javascript">
+	$(function(){
+		console.log("Jquery应用测试");
+	})
+</script>
+</head>
+<!-- 
+${...}  变量表达式，
+@{...}  链接url表达式，
+*{...}  选择变量表达式
+ -->
+<body>
+	<h3>Thymeleaf基本语法</h3>
+	<hr/>
+	<div class="container">
+		<h4>变量定义:with</h4>
+		<h4 th:with="g=${session.goods},s=${session.similar}">
+			商品名称：<span th:text=${g.gname}></span><br/>
+			同类商品数量：<span th:text=${s.size()}></span>
+		</h4>
+		<hr/>
+		<h4>变量定义:object</h4>
+		<h4	th:object="${session.goods}">
+			商品名称：<span th:text="*{gname}"></span><br/>
+			商品类型：<span th:text="*{type}"></span><br/>
+			商品单价：<span th:text="*{price}"></span><br/>
+		</h4>
+		<hr/>
+		<h4>运算</h4>
+		<h4 th:with="i=0">
+			算术运算：<span th:text="${10%3}">+-*/%</span><br/>
+			关系运算：<span th:text="${10%3==1}">true/false</span><br/>
+			逻辑运算：<span th:text="${2 gt 1 and 1 lt i}">gt、lt、eq、or、and、&|^</span><br/>
+			<!-- 自运算：<span th:text="${++i}">++、--</span> -->
+			<!-- 赋值运算：<span th:text="${i+=1}"></span> -->
+		</h4>
+		<hr/>
+		<h4>判断</h4>
+		<h4 th:with="g = ${session.goods}, s = ${session.similar}">
+			if判断:
+			<span th:if="${g.price gt 100}">太贵了</span>
+			<span th:if="${g.price le 100 and g.price gt 50}">差不多，能接受</span>
+			<span th:if="${g.price le 50 }">物美价廉</span>
+			<br/>
+			unless判断（反向判断，在中文里头表达的含义为：除了...）:
+			<span th:unless="${s.size() lt 5}">物产丰富，销量较高</span>
+		</h4>
+		<hr/>
+		<h4>循环</h4>
+		<table class="table">
+			<thead>
+				<tr>
+					<th>商品编号</th>
+					<th>商品名称</th>
+					<th>商品类型</th>
+					<th>商品单价</th>
+					<th>上架日期</th>
+					<th>状态参数：行编号</th>
+					<th>状态参数：行数据</th>
+					<th>状态参数：奇数行</th>
+					<th>状态参数：偶数行</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="goods,stat:${session.similar}">
+					<td th:text="${goods.gid}"></td>
+					<td th:text="${goods.gname}"></td>
+					<td th:text="${goods.type}"></td>
+					<td th:text="${goods.price}"></td>
+					<td th:text="${goods.date}"></td>
+					<td th:text="${stat.index}"></td>
+					<td th:text="${stat.current}"></td>
+					<td th:text="${stat.odd}"></td>
+					<td th:text="${stat.even}"></td>
+				</tr>
+			</tbody>
+		</table>
+			
+		
+	</div>
+</body>
+</html>

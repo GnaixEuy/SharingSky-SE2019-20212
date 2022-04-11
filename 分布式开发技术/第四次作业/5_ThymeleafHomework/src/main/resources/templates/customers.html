@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+<table border="1px">
+    <tr>
+        <th>id</th>
+        <th>姓名</th>
+        <th>电话</th>
+        <th>状态</th>
+    </tr>
+    <!--/*@thymesVar id="customer" type="cn.limitless.thymeleafhomework.entity.Customer"*/-->
+    <tr th:each="customer : ${application.customerData.content}">
+        <td th:text="${customer.id}" th:if="${customer.id}%2==0" bgcolor="red"></td>
+        <td th:text="${customer.id}" th:if="${customer.id}%2!=0" bgcolor="green"></td>
+        <td th:text="${customer.cname}"></td>
+        <td th:text="${customer.mobile}"></td>
+        <td th:text="${customer.status}"></td>
+    </tr>
+</table>
+</body>
+</html>
