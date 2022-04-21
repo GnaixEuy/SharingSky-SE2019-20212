@@ -1,0 +1,48 @@
+<html  xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="utf-8">
+  </head>
+  
+  <body>
+    	<nav class="navbar navbar-default top-navbar" role="navigation" id="header">
+			<div class="navbar-header">
+				<a class="navbar-brand" href="#">
+					<strong>商城后台管理系统</strong>
+				</a>
+			</div>
+			<ul class="nav navbar-top-links navbar-right">
+				<li class="dropdown">
+					<a class="dropdown-toggle" data-toggle="dropdown" 
+						href="#" aria-expanded="false">
+						<span th:text="${session.aname }"></span>
+						<i class="fa fa-user fa-fw"></i> <i class="fa fa-caret-down"></i>
+					</a>
+					<ul class="dropdown-menu dropdown-user">
+						<li>
+						<a href="javaScript:logout()"><i class="fa fa-sign-out fa-fw"></i>
+							登出
+						</a>
+						</li>
+					</ul>
+				</li>
+			</ul>
+		</nav>
+		<!--导航栏class="active-menu-->
+		<nav class="navbar-default navbar-side" role="navigation" id="menu">
+			<div class="sidebar-collapse">
+				<ul class="nav" id="main-menu">
+					<li><a th:href="statistical.html">
+					<i class="fa fa-desktop"></i>统计信息</a></li>
+					<li><a th:href="customer.html">
+					<i class="fa fa-table"></i>客户管理 </a></li>
+					<li><a th:href="goods.html">
+					<i class="fa fa-table"></i>商品管理</a></li>
+					<li><a th:href="order.html">
+					<i class="fa fa-desktop"></i>订单管理</a></li>
+					<li><a th:href="dictionary.html">
+					<i class="fa fa-book"></i>字典管理</a></li>
+				</ul>
+			</div>
+		</nav>
+  </body>
+</html>
