@@ -1,0 +1,10 @@
+spring:
+  datasource:
+    username: root
+    password: 123456
+    url: jdbc:mysql://localhost:3306/homework_7?characterEncoding=UTF8&useSSL=false&serverTimezone=Asia/Shanghai&allowPublicKeyRetrieval=true
+  flyway:
+    enabled: true
+  application:
+    name: goods
+
