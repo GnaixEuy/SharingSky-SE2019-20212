@@ -1,0 +1,19 @@
+<!--pages/category/index.wxml-->
+<import src="../templates/category/category_detail"></import>
+<view class="container">
+  <view class="category-box">
+    <view class="left-box">
+      <block wx:for="{{categories}}" wx:key="index">
+        <view class="menu-item {{currentMenuIndex == index ? 'selected' : ''}}" data-id="{{item.id}}" data-index="{{index}}" bindtap="changeCategory" data-title-name="{{item.name}}">
+          {{item.name}}
+        </view>
+      </block>
+    </view>
+    <view class="right-box">
+      <view class="foods-type-box">
+        <template is="category_detail" data="{{categoryInfo}}"></template>
+      </view>
+    </view>
+  </view>
+
+</view>

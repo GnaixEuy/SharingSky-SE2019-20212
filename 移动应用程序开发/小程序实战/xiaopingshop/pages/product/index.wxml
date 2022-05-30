@@ -1,0 +1,62 @@
+<view class="container detail-container">
+	<view class="detail-header-box">
+		<view class="detail-topic-img">
+			<image src="{{product.main_img_url}}" mode="aspectFit"></image>
+		</view>
+		<view class="count-box">
+			<view class="product-counts">
+				<picker class="{{product.stock == 0 ? 'disabled':''}}" disabled="{{product.stock == 0}}" bindchange="bindPickerChange" value="{{index}}" range="{{counts}}">
+					<view class="basic-info-box">
+						<view>
+							<text class="counts-tips">数量</text>
+							<text class="counts-data">{{productCounts}}</text>
+						</view>
+					</view>
+				</picker>
+			</view>
+		</view>
+
+		<view class="basic-info-box">
+			<view class="stock" wx:if="{{product.stock > 0}}">
+				有货
+			</view>
+			<view class="stock no" wx:else>缺货</view>
+			<view class="name">{{product.name}}</view>
+			<view class="price">¥{{product.price}}</view>
+		</view>
+	</view>
+
+   <view class="detail-bottom-box">
+      <view class="tabs-box">
+         <block wx:for="{{['商品详情','产品参数','售后保障']}}" wx:key="index">
+            <view class="tabs-item {{currentTabsIndex == index ? 'selected':''}}" bindtap="handleTabsItemTap" 
+            data-index="{{index}}">
+               {{item}}
+            </view>
+         </block>
+      </view>
+
+      <view class="product-detail-imgs" wx:if="{{currentTabsIndex == 0}}">
+         <block wx:for="{{product.imgs}}" wx:key="index">
+            <image src="{{item.img_url.url}}" mode="aspectFill" />
+         </block>
+      </view>
+
+      <view class="product-detail-properties" wx:if="{{currentTabsIndex == 1}}">
+         <block wx:for="{{product.properties}}" wx:key="index">
+            <view class="properties-item">
+               <view class="properties-name">
+                  {{item.name}}
+               </view>
+               <view class="properties-detail">
+                  {{item.detail}}
+               </view>
+            </view>
+         </block>
+      </view>
+
+      <view class="product-detail-protect" wx:if="{{currentTabsIndex == 2}}">
+         <view>七天内无理由免费退货</view>
+      </view>
+   </view>
+</view>

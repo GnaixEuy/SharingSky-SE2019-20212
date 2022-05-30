@@ -1,0 +1,6 @@
+<!--pages/product_search/index.wxml-->
+<import src="../templates/products/products.wxml" />
+<view class="container">
+  <view class="header">搜索结果</view>
+  <template is="products" data="{{products}}"></template>
+</view>

@@ -1,0 +1,27 @@
+<!--swiper/index.wxml-->
+<import  src="../templates/products/products.wxml" />
+<view class="container">
+  <view class="search-box">
+  <input type="text" placeholder="请输入您喜欢的商品" bindconfirm="handleSearch"/>
+  <icon type="search" class="icons"></icon>
+</view>
+<swiper  indicator-dots="{{true}}"
+ indicator-active-color="red"
+indicator-active-color="orange"
+duration="{{200}}"
+autoplay interval="{{2000}}">
+  <swiper-item wx:for="{{banners}}" wx:key="index" wx:for-item="banner">
+    <view class="swiper-item">
+     <image src="{{banner.img.url}}" />
+    </view>
+  </swiper-item>
+</swiper>
+
+<view class="home-main">
+<!-- 推荐商品 -->
+  <view class="home-main-products"> 
+    <view class="home-main-header">推荐新品</view>
+    <template is="products" data="{{products}}"></template>
+  </view>
+</view>
+</view>

@@ -1,0 +1,155 @@
+.detail-topic-img {
+  display: flex;
+  justify-content: center;
+}
+
+.detail-topic-img image {
+  width: 100%;
+}
+
+/*数量区域*/
+.count-box {
+  width: 300rpx;
+  height: 100rpx;
+  margin: 30rpx auto;
+  border-radius: 100rpx;
+  background-color: #AB956D;
+  color: #fff;
+  display: flex;
+  align-items: center;
+}
+
+.product-counts {
+  height: 100%;
+  display: flex;
+  font-size: 24rpx;
+  align-items: center;
+  justify-content: center;
+}
+
+
+/*数量选择器*/
+.product-counts picker {
+  margin: 0 auto;
+  width: 100%;
+  color: #fff;
+}
+
+.product-counts picker.disabled {
+  color: #D5D5DB;
+}
+
+.product-counts picker view {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100rpx;
+}
+
+.counts-data {
+  font-size: 28rpx;
+  font-weight: bolder;
+}
+
+.counts-tips,
+.counts-data {
+  margin: 0 55rpx;
+}
+
+
+/*价格和名称*/
+.basic-info-box {
+  padding: 15rpx 0;
+  color: #454552;
+  text-align: center;
+}
+
+.basic-info-box>view {
+  margin: 20rpx auto;
+}
+
+.basic-info-box .stock {
+  font-size: 24rpx;
+}
+
+.basic-info-box .stock.no {
+  color: #B42F2D;
+}
+
+.basic-info-box .name {
+  font-size: 40rpx;
+}
+
+.basic-info-box .price {
+  font-size: 38rpx;
+}
+
+
+/*商品详情*/
+.detail-bottom-box {
+  margin-top: 30rpx;
+}
+
+.tabs-box {
+  height: 90rpx;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15rpx;
+}
+
+.tabs-item {
+  width: 33.3%;
+  color: #C7C7CB;
+  font-size: 28rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  border-bottom: 1rpx solid #D0D0D7;
+}
+
+.tabs-item.selected {
+  color: rgba(171, 149, 109, .8);
+  border-bottom: 2px solid rgba(171, 149, 109, .8);
+}
+
+.product-detail-box {
+  padding-bottom: 20rpx;
+}
+
+.product-detail-imgs image {
+  width: 100%;
+  height: 400rpx;
+  float: left;
+}
+
+.product-detail-properties,
+.product-detail-protect {
+  min-height: 80%;
+}
+
+.properties-item {
+  display: flex;
+  margin: 25rpx 0;
+  font-size: 24rpx;
+}
+
+.properties-name {
+  width: 160rpx;
+  color: #808080;
+  text-align: center;
+}
+
+.properties-detail {
+  flex: 1;
+  color: #333;
+  padding-right: 40rpx;
+}
+
+.product-detail-protect view {
+  font-size: 24rpx;
+  color: 808080;
+  text-align: center;
+  margin-top: 30rpx;
+}
